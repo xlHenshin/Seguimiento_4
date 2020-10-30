@@ -3,8 +3,8 @@ class Square extends Figure{
     constructor(posx,posy,number){
 
         super(posx,posy,number);
-        this.speed=this.random(1,3);
-        this.value=this.int(this.random(1,10));
+        this.speed= random(1,3);
+        this.value=int(random(1,10));
 
     }
 

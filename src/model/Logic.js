@@ -39,26 +39,17 @@ draw(){
                 text("ERROR 404",50,50);
             }
 
-            rect(80,700,125,50);
-            rect(250,700,125,50);
-            rect(420,700,125,50);
-            rect(590,700,125,50);
-            text("Agregar",105,730);
-            text("Quitar",285,730);
-            text("Agrandar",442,730);
-            text("Círculos",615,730);
             break;
 
             case 1:
-
-            rect(120,450,125,50);
-            rect(290,450,125,50);
-            rect(460,450,125,50);
-            rect(630,450,125,50);
-            text("Agregar",120,480);
-            text("Quitar",290,480);
-            text("Agrandar",460,480);
-            text("Círculos",630,480);
+                rect(80,700,125,50);
+                rect(250,700,125,50);
+                rect(420,700,125,50);
+                rect(590,700,125,50);
+                text("Agregar",105,730);
+                text("Quitar",285,730);
+                text("Agrandar",442,730);
+                text("Círculos",615,730);
 
             for (let i = 0; i < this.figure.length; i++) {
             
@@ -73,12 +64,37 @@ draw(){
     }
 }
 
-mouseClicked(){
+mouse(){
 
     switch (this.screen) {
         case 0:
 
-            if(mouseX >= 265 && mouseX <- 265+20)
+            if(mouseX >= 465 && mouseX <= 465+50
+                && mouseY >= 450 && mouseY <= 450+20
+                && this.contador < 10 ){
+                    
+                    this.contador += 1;
+                }
+           
+            if(mouseX >= 295 && mouseX <= 295+50
+                && mouseY >= 450 && mouseY <= 450+20
+                && this.contador > 0 ){
+                        
+                    this.contador -= 1;
+                }
+        
+            if(mouseX >= 360 && mouseX <= 360+90
+                && mouseY >= 490 && mouseY <= 490+20
+                && this.contador > 0 && this.contador < 10 ){
+                    
+                    this.screen=1;
+                    
+                    for (let i = 0; i < this.contador; i++) {
+                        
+                        this.figure.push(new Square(this.position[this.pos],100,this.contador));
+                        console.log(this.contador);
+                    }
+                }
             
             break;
 
