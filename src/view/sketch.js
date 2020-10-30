@@ -1,11 +1,15 @@
-let circulo;
+let logic;
 
 function setup(){
 createCanvas(800,800);
-circulo=new Figura(400,400,100);
+logic=new Logic(this);
 }
 
 function draw(){
-    background(0);
-    circulo.draw();
+    background(155);
+    logic.draw();
+}
+
+function mouseClicked(){
+    console.log(mouseX,mouseY);
 }
