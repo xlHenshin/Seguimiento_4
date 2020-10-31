@@ -91,7 +91,7 @@ mouse(){
                     
                     for (let i = 0; i < this.contador; i++) {
                         
-                        this.figure.push(new Square(this.position[this.pos],100,this.contador));
+                        this.figure.push(new Square(this.position[this.position],100,this.contador));
                         console.log(this.contador);
                     }
                 }
@@ -99,6 +99,25 @@ mouse(){
             break;
 
         case 1:
+
+        if(mouseX >= 80 && mouseX <= 80+125
+                && mouseY >= 700 && mouseY <= 700+50){
+                    
+                    if (this.figure.length > 0 && this.figure.length < 10) {
+                        
+                        this.figure.push(new Square(this.position[this.position],100,this.contador));
+                        console.log(this.contador);
+                    }
+                }
+
+        if(mouseX >= 250 && mouseX <= 250+125
+                && mouseY >= 700 && mouseY <= 700+50){
+                            
+                    if (this.figure.length > 0) {
+                                
+                        this.figure.splice(0,1);
+                    }
+                }
             
             break;
     

@@ -10,7 +10,7 @@ function draw(){
     logic.draw();
 }
 
-function mousePressed(){
+function mouseClicked(){
     console.log(mouseX,mouseY);
     logic.mouse();
 }
