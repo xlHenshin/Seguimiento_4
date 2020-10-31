@@ -6,6 +6,7 @@ class Logic{
         this.screen=0;
         this.error=false;
         this.figure=[];
+        this.size=1;
         //=======================
         this.position=[];
         this.position[0]=50;
@@ -53,7 +54,7 @@ draw(){
 
             for (let i = 0; i < this.figure.length; i++) {
             
-                this.figure[i].drawFigure((70*i)+70);
+                this.figure[i].drawFigure((80*i)+20,50*this.size);
                 this.figure[i].move();
             }
 
@@ -85,7 +86,7 @@ mouse(){
         
             if(mouseX >= 360 && mouseX <= 360+90
                 && mouseY >= 490 && mouseY <= 490+20
-                && this.contador > 0 && this.contador < 10 ){
+                && this.contador > 0 && this.contador <= 10 ){
                     
                     this.screen=1;
                     
@@ -118,11 +119,29 @@ mouse(){
                         this.figure.splice(0,1);
                     }
                 }
+
+        if(mouseX >= 420 && mouseX <= 420+125
+                && mouseY >= 700 && mouseY <= 700+50){
+                       
+                    this.figure.forEach(element => {
+                        this.size=2;
+                        console.log(element.size);
+                    });
+                }
             
             break;
     
         default:
             break;
+    }
+}
+
+key(){
+
+    if(keyCode===78){
+        this.figure.sort(function(a,b){
+            return a.getValue()-b.getValue();
+        });
     }
 }
 

@@ -6,11 +6,15 @@ logic=new Logic(this);
 }
 
 function draw(){
-    background(155);
+    background(0);
     logic.draw();
 }
 
 function mouseClicked(){
     console.log(mouseX,mouseY);
     logic.mouse();
+}
+
+function keyPressed(){
+    logic.key();
 }

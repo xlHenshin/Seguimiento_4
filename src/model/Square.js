@@ -8,8 +8,8 @@ class Square extends Figure{
         console.log(this.value);
     }
 
-    drawFigure(posx){
-        rect(posx,this.posy,50,50);
+    drawFigure(posx,size){
+        rect(posx,this.posy,size,size);
         text(this.value,posx+20,this.posy+30);
     }
 
@@ -19,5 +19,9 @@ class Square extends Figure{
         if(this.posy>184-50 || this.posy<0){
             this.speed= -this.speed;
         }
+    }
+
+    getValue(){
+        return this.value
     }
 }
