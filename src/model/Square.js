@@ -5,7 +5,7 @@ class Square extends Figure{
         super(posx,posy,number);
         this.speed= random(1,3);
         this.value=int(random(1,10));
-        console.log(this.value);
+
     }
 
     drawFigure(posx,size){

@@ -1,20 +1,21 @@
-let logic;
+
+let controller;
 
 function setup(){
 createCanvas(800,800);
-logic=new Logic(this);
+controller=new Controller();
 }
 
 function draw(){
     background(0);
-    logic.draw();
+    controller.draw();
 }
 
 function mouseClicked(){
     console.log(mouseX,mouseY);
-    logic.mouse();
+    controller.mouse();
 }
 
 function keyPressed(){
-    logic.key();
+    controller.key();
 }

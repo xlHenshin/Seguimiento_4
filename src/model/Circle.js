@@ -1,14 +1,27 @@
-class Circle{
+class Circle extends Figure{
 
-    constructor(posx, posy, size){
-        this.posx=posx;
-        this.posy=posy;
-        this.size=size;
-        figure = new Figure(this)
+    constructor(posx, posy, number){
+       
+        super(posx,posy,number);
+        this.speed= random(1,3);
+        this.value=int(random(1,10));
+
     }
 
-    draw(){
+    drawCircle(posx){
         fill(255,0,0);
-        ellipse(this.posx,this.posy,this.size,this.size);
+        ellipse(posx,this.posy,50,50);
+    }
+
+    moveCircle(){
+
+        this.posy+=this.speed;
+        if(this.posy>184-50 || this.posy<0){
+            this.speed= -this.speed;
+        }
+    }
+
+    getValue(){
+        return this.value
     }
 }

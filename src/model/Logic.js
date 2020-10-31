@@ -1,7 +1,7 @@
 class Logic{
 
-    constructor(app){
-       
+    constructor(){
+
         this.contador=0;
         this.screen=0;
         this.error=false;
@@ -37,6 +37,7 @@ draw(){
             textSize(20);
 
             if (this.error){
+                rect(30,20,150,50);
                 text("ERROR 404",50,50);
             }
 
@@ -79,7 +80,7 @@ mouse(){
            
             if(mouseX >= 295 && mouseX <= 295+50
                 && mouseY >= 450 && mouseY <= 450+20
-                && this.contador > 0 ){
+                && this.contador >= 0 ){
                         
                     this.contador -= 1;
                 }
@@ -95,7 +96,13 @@ mouse(){
                         this.figure.push(new Square(this.position[this.position],100,this.contador));
                         console.log(this.contador);
                     }
+
                 }
+
+                if (mouseX >= 360 && mouseX <= 360+90
+                    && mouseY >= 490 && mouseY <= 490+20) {
+                    this.error = true;
+                } 
             
             break;
 
